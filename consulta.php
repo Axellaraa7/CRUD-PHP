@@ -5,7 +5,7 @@ $claseExito = "border-green-800 bg-green-200 text-green-600";
 $claseError = "border-red-800 bg-red-200 text-red-600";
 
 if(!empty($_POST)){
-  $datos = limpiarDatos($_POST);
+  $datos = limpiarDatos($conexion,$_POST);
 }
 
 if(isset($datos["crud"])){

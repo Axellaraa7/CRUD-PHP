@@ -3,7 +3,7 @@ require_once("./head.php");
 $crud = "insert";
 
 if(isset($_GET["id"])){
-  $datos = limpiarDatos($_GET);
+  $datos = limpiarDatos($conexion,$_GET);
   $infoCon = $objConPhp->getById($datos["id"]);
   $crud = "update";
 }
