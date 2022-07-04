@@ -4,24 +4,20 @@ require_once("./head.php");
 $claseExito = "border-green-800 bg-green-200 text-green-600";
 $claseError = "border-red-800 bg-red-200 text-red-600";
 
-if(!empty($_POST)){
-  $datos = limpiarDatos($conexion,$_POST);
-}
-
-if(isset($datos["crud"])){
-  switch($datos["crud"]){
+if(isset($_POST["crud"])){
+  switch($_POST["crud"]){
     case "insert":
-      $exito = $objConPhp->insert($datos);
+      $exito = $objConPhp->insert($_POST);
       $mensaje = ($exito) ? "Se registró 1 producto" : "No se registró el producto";
       $clase = ($exito) ?  $claseExito : $claseError;
       break;
     case "update":
-      $exito = $objConPhp->update($datos);
+      $exito = $objConPhp->update($_POST);
       $mensaje = ($exito) ? "Se actualizó un producto" : "No se actualizó el producto";
       $clase = ($exito) ? $claseExito : $claseError;
       break;
     case "delete":
-      $exito = $objConPhp->delete($datos["id"]);
+      $exito = $objConPhp->delete($_POST["id"]);
       $mensaje = ($exito) ? "Se eliminó el producto" : "No se eliminó el producto";
       $clase = ($exito) ? $claseExito : $claseError;
       break;

@@ -4,14 +4,6 @@ require_once("./models/ConexionPHP.php");
 require_once("./models/Marcas.php");
 require_once("./models/Prendas.php");
 
-function limpiarDatos($conexion,$arr){
-  $datos = array();
-  foreach($arr as $key=>$value){
-    $datos[$key] = $conexion->real_escape_string($value);
-  }
-  return $datos;
-}
-
 $conexion = Conexion::getInstance("pruebasconexion")->getConexion();
 $objConPhp = new ConexionPHP($conexion);
 $objMarcas = new Marcas($conexion);
