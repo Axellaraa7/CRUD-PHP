@@ -1,0 +1,60 @@
+/* .divMenu{
+  display: none;
+} */
+
+/* .divMenu:hover span:first-child{
+  transform: translateX(.5rem) translateY(-.3rem) rotateZ(45deg);
+}
+
+.divMenu:hover span:nth-child(2){
+  visibility: hidden;
+  opacity: 0;
+}
+
+.divMenu:hover span:nth-child(3){
+  transform: translateX(.5rem) translateY(.3rem) rotateZ(-45deg);
+}
+
+span{
+  display: block;
+  width: 48px;
+  margin: .48rem 0;
+  border-radius: .4rem;
+  transform-origin: left;
+  transition: all .3s ease-in 0s;
+} */
+
+/* @media screen and (max-width:768px){
+  nav{
+    display: none;
+  }
+
+  .divMenu{
+    display: block;
+  }
+
+  .divMenu:hover+nav{
+    display: block;
+    position: absolute;
+    width: 100vw;
+    top: 100%;
+    left: 0;
+  }
+
+  ul.flex{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  a.rounded-md{
+    border-radius: 0;
+    border-bottom: 2px solid white
+  }
+} */
+
+/* @media screen and (max-width:640px){
+  form{
+    min-width: 320px;
+    width: 90%;
+  }
+} */

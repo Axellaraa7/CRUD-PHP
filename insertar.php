@@ -8,7 +8,7 @@ if(isset($_GET["id"])){
 }
 ?>
 <main class="flex justify-center align-center py-10">
-  <form action="./consulta.php" method="post" class="container shadow-xl shadow-gray-400">
+  <form action="./consulta.php" method="post" class="sm:container shadow-xl shadow-gray-400">
     <div class="flex flex-col p-5 gap-y-4 ">
       <label for="marca">Selecciona la marca</label>
       <select class="p-2" name="marca" id="marca">
@@ -45,3 +45,5 @@ if(isset($_GET["id"])){
     </div>
   </form>
 </main>
+
+<?php require_once("./footer.php"); ?>
