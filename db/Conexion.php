@@ -4,7 +4,7 @@ class Conexion {
   private $conexion;
 
   private function __construct($dbname){
-    $this->conexion = new mysqli("localhost","root","",$dbname);
+    $this->conexion = new mysqli("localhost","root","180598",$dbname);
     if($this->conexion->connect_errno){
       die("Error de conexion (".$this->conexion->connect_errno.")".$this->conexion->connect_error);
     }

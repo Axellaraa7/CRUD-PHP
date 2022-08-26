@@ -4,11 +4,11 @@ class ConexionPHP{
 
   public function __construct($conexion){
     $this->conexion = $conexion;
-    $this->table = "conexionphp";
+    $this->table = "clothes_crud";
   }
 
   public function getAll(){
-    return $this->conexion->query("SELECT * FROM $this->table");
+    return $this->conexion->query("SELECT * FROM $this->table ORDER BY ID");
   }
 
   public function getById($id){
@@ -19,15 +19,15 @@ class ConexionPHP{
   }
 
   public function insert($datos){
-    $query = $this->conexion->prepare("INSERT INTO $this->table (marca,tipo_prenda,anio) VALUES (?,?,?)");
-    $query->bind_param("iii",$datos["marca"],$datos["tipo_prenda"],$datos["anio"]);
+    $query = $this->conexion->prepare("INSERT INTO $this->table (brand_id,clothing_id,releasing) VALUES (?,?,?)");
+    $query->bind_param("iii",$datos["brand"],$datos["clothing"],$datos["releasing"]);
     if(!$query->execute()) return false;
     return true;
   }
 
   public function update($datos){
-    $query = $this->conexion->prepare("UPDATE $this->table SET marca = ?, tipo_prenda = ?, anio = ? WHERE id = ?");
-    $query->bind_param("iiii",$datos["marca"],$datos["tipo_prenda"],$datos["anio"],$datos["id"]);
+    $query = $this->conexion->prepare("UPDATE $this->table SET brand_id = ?, clothing_id = ?, releasing = ? WHERE id = ?");
+    $query->bind_param("iiii",$datos["brand"],$datos["clothing"],$datos["releasing"],$datos["id"]);
     if(!$query->execute()) return false;
     return true;
   }

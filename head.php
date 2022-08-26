@@ -4,7 +4,7 @@ require_once("./models/ConexionPHP.php");
 require_once("./models/Marcas.php");
 require_once("./models/Prendas.php");
 
-$conexion = Conexion::getInstance("pruebasconexion")->getConexion();
+$conexion = Conexion::getInstance("db_php")->getConexion();
 $objConPhp = new ConexionPHP($conexion);
 $objMarcas = new Marcas($conexion);
 $objPrendas = new Prendas($conexion);

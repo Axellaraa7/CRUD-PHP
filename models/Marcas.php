@@ -4,7 +4,7 @@ class Marcas{
 
   public function __construct($conexion){
     $this->conexion = $conexion;
-    $this->table = "catalogo_marcas";
+    $this->table = "Brands";
   }
 
   public function getAll(){
