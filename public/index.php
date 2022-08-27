@@ -1,5 +1,5 @@
 <?php 
-require_once("./head.php");
+require_once("./templates/head.php");
 
 $claseExito = "border-green-700 bg-green-200 text-green-600";
 $claseError = "border-red-700 bg-red-200 text-red-600";
@@ -66,4 +66,4 @@ $results = $objConPhp->getAll();
   </section>
 </main>
 
-<?php require_once("./footer.php"); ?>
+<?php require_once("./templates/footer.php"); ?>

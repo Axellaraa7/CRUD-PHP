@@ -1,10 +1,14 @@
 <?php
-require_once("./db/Conexion.php");
-require_once("./models/ConexionPHP.php");
-require_once("./models/Marcas.php");
-require_once("./models/Prendas.php");
+// require_once("./../db/Conexion.php");
+// require_once("./../models/ConexionPHP.php");
+// require_once("./../models/Marcas.php");
+// require_once("./../models/Prendas.php");
+require_once(realpath( __DIR__ . "/../../db/Conexion.php"));
+require_once(realpath( __DIR__ . "/../../models/ConexionPHP.php"));
+require_once(realpath( __DIR__ . "/../../models/Brands.php"));
+require_once(realpath( __DIR__ . "/../../models/Clothing.php"));
 
-$conexion = Conexion::getInstance("db_php")->getConexion();
+$conexion = Conexion::getInstance()->getConexion();
 $objConPhp = new ConexionPHP($conexion);
 $objMarcas = new Marcas($conexion);
 $objPrendas = new Prendas($conexion);
@@ -21,7 +25,7 @@ $arrayPrendas = $objPrendas->getAll();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>2.CRUD</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body class="font-mono">
   <header class="flex justify-between items-center p-6 bg-gray-800 relative">
@@ -33,7 +37,7 @@ $arrayPrendas = $objPrendas->getAll();
     </div>
     <nav> 
       <ul class="flex justify-even items-center p-1 gap-x-3">
-        <li><a href="consulta.php" class="text-slate-50 px-4 py-2 bg-orange-700 hover:bg-orange-500 rounded-md block">Consultar Registros</a></li>
+        <li><a href="index.php" class="text-slate-50 px-4 py-2 bg-orange-700 hover:bg-orange-500 rounded-md block">Consultar Registros</a></li>
         <li><a href="insertar.php" class="block text-slate-50 px-4 py-2 bg-orange-700 hover:bg-orange-500 rounded-md">Insertar registro</a></li>
       </ul>
     </nav>

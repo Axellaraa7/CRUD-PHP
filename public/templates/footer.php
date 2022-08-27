@@ -1,5 +1,5 @@
 </body>
-<script src="./index.js"></script>
+<script src="./js/index.js"></script>
 <script>
   tailwind.config = {
     theme:{

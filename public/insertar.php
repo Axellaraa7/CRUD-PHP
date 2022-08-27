@@ -1,5 +1,5 @@
 <?php 
-require_once("./head.php");
+require_once("./templates/head.php");
 $crud = "insert";
 
 if(isset($_GET["id"])){
@@ -8,7 +8,7 @@ if(isset($_GET["id"])){
 }
 ?>
 <main class="flex justify-center align-center py-10">
-  <form action="./consulta.php" method="post" class="sm:container shadow-xl shadow-gray-400">
+  <form action="./index.php" method="post" class="sm:container shadow-xl shadow-gray-400">
     <div class="flex flex-col p-5 gap-y-4 ">
       <label for="marca">Selecciona la marca</label>
       <select class="p-2" name="brand" id="marca">
@@ -46,4 +46,4 @@ if(isset($_GET["id"])){
   </form>
 </main>
 
-<?php require_once("./footer.php"); ?>
+<?php require_once("./templates/footer.php"); ?>
