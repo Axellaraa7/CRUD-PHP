@@ -1,13 +1,37 @@
-Options +FollowSymLinks -MultiViews
-# Turn mod_rewrite on
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+  # Options All -Indexes
+  # RewriteEngine On
+  # RewriteBase /1.PHP-CRUD/
 
-RewriteRule ^(db|models)(/.*|)$ - [NC,F]
-RewriteRule ^(\.git/|\.gitignore|\.env|config\.php)$ - [NC,F]
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  # RewriteCond %{REQUEST_FILENAME} !-f
+  # RewriteRule ^ public/index.php [L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
+  # RewriteCond %{REQUEST_FILENAME} "config\.php" [NC]
+  # RewriteRule "^/config\.php$" "https://www.google.com" [L,NC]
+  # RewriteRule "^/config\.php$" "https://www.youtube.com" [L,NC]
 
-RewriteRule ^public/(.*)$ /public/index.php [L,NC]
+  # RewriteCond %{REQUEST_URI} /public/([^\s?]*) [NC]
+  # RewriteRule ^ %1 [L,NE]
+
+  # RewriteRule ^((?!public/).*) public/$1 [L,NC]
+
+  # RewriteRule ^/([a-z]*)/([^/]*|)$ "http://php-practices:3002/1.PHP-CRUD/public/index.php" [NC,L]
+  # RewriteBase E:\2BACKEND-PRACTICES\PHP\1.PHP-CRUD\
+
+  # RewriteRule ^ /$1.php [NC,L]
+  # RewriteRule ^ E:\2BACKEND-PRACTICES\PHP\1.PHP-CRUD\public\index.php [NC,L]
+  # RewriteRule ^(.*\.php)$ /public
+  # RewriteCond %{REQUEST_FILENAME} !-f
+  # RewriteRule ^public/([^\.]+)$ $1.php [NC,L]
+  
+# RewriteCond %{REQUEST_URI} -d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^ /public/index.php [NC,L]
+# RewriteRule ^/$ /public/index.php [L,NC]
+</IfModule>
+
+
+
+
+

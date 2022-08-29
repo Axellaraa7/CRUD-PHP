@@ -4,7 +4,7 @@ class Conexion {
   private $conexion, $dbInfo;
 
   private function __construct(){
-    $this->dbInfo = require_once(realpath(__DIR__ . "/../../config.php"));
+    $this->dbInfo = require_once(realpath(__DIR__ . "/../config.php"));
     $this->conexion = new mysqli($this->dbInfo["host"],$this->dbInfo["user"],$this->dbInfo["psw"],$this->dbInfo["dbname"]);
     if($this->conexion->connect_errno){
       die("Error de conexion (".$this->conexion->connect_errno.")".$this->conexion->connect_error);
